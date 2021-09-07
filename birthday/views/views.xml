@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="vioew_partners_form_crm1">
+      <field name="name">view.res.partner.form.birthday</field>
+      <field name="model">res.partner</field>
+      <field eval="1" name="priority" />
+      <field name="arch" type="xml">
+        <data>
+            <xpath position="before" expr="//field[@name='mobile']">
+                <field name="birthday" />
+            </xpath>
+        </data>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="event_gt_extended.action_window">
+      <field name="name">event_gt_extended window</field>
+      <field name="res_model">event_gt_extended.event_gt_extended</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="event_gt_extended.action_server">
+      <field name="name">event_gt_extended server</field>
+      <field name="model_id" ref="model_event_gt_extended_event_gt_extended"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="event_gt_extended" id="event_gt_extended.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="event_gt_extended.menu_1" parent="event_gt_extended.menu_root"/>
+    <menuitem name="Menu 2" id="event_gt_extended.menu_2" parent="event_gt_extended.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="event_gt_extended.menu_1_list" parent="event_gt_extended.menu_1"
+              action="event_gt_extended.action_window"/>
+    <menuitem name="Server to list" id="event_gt_extended" parent="event_gt_extended.menu_2"
+              action="event_gt_extended.action_server"/>
+-->
+  </data>
+</odoo>
